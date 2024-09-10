@@ -1,0 +1,85 @@
+/* Container for the entire app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden;
+}
+
+/* Fix the header at the top */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #3effc0;
+}
+
+/* Fix the navbar below the header */
+.navbar {
+  position: fixed;
+  top: 50px; /* Adjust based on the height of your header */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #035c67;
+  color: white;
+}
+.MuiGrid-spacing-xs-3 {
+  width: 100% !important;
+  margin: 0px !important;
+}
+/* Main content area, scrollable */
+.content {
+  /* margin-top: 37px; */
+  /* padding: 20px; */
+  height: calc(100vh - 100px);
+  margin-top: 3rem !important;
+  overflow-y: auto !important;
+  display: block !important;
+}
+
+.css-hyum1k-MuiToolbar-root {
+  min-width: 600px !important;
+}
+/* .main-content {
+  vertical-align: top;
+  padding: 0px;
+  overflow-y: scroll;
+  z-index: 200px;
+} */
+.css-hyum1k-MuiToolbar-root {
+  min-height: 0px !important;
+}
+.header-black {
+  background-color: black;
+}
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  padding: 0px !important;
+  line-height: 1.75 !important;
+}
+.header-green {
+  background-color: green;
+}
+
+.user-info {
+  margin-left: 16px;
+}
+
+.welcome-section,
+.tasks-section,
+.followed-items-section,
+.pulse-section {
+  margin-bottom: 16px;
+}
+
+.pulse-input {
+  display: flex;
+  align-items: center;
+}
+
+.pulse-input button,
+.pulse-input input {
+  margin-right: 8px;
+}
