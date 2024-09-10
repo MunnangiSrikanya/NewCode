@@ -1,0 +1,68 @@
+.button {
+  background-color: #035c67 !important;
+  color: white !important;
+  padding: 0.3rem 1.75rem !important;
+  border-radius: 0.5rem !important;
+  -webkit-border-radius: 0.5rem !important;
+  -moz-border-radius: 0.5rem !important;
+  -ms-border-radius: 0.5rem !important;
+  -o-border-radius: 0.5rem !important;
+}
+.cancel-button {
+  color: #035c67 !important;
+  padding: 0.3rem 1.75rem !important;
+  border-radius: 0.5rem !important;
+  -webkit-border-radius: 0.5rem !important;
+  -moz-border-radius: 0.5rem !important;
+  -ms-border-radius: 0.5rem !important;
+  -o-border-radius: 0.5rem !important;
+}
+.main-card {
+  margin: 2rem 15rem;
+  padding: 2rem;
+  min-height: 100px;
+  border-radius: 1rem !important;
+}
+.MuiFormControl-marginNormal {
+  margin-top: 8px !important;
+}
+tr {
+  height: 8px !important;
+}
+tr td {
+  height: auto !important;
+}
+.MuiTableCell-root {
+  padding: 5px !important;
+}
+.cms-bid-card {
+  margin: 2rem 2rem;
+  padding: 2rem;
+  min-height: 100px;
+  border-radius: 1rem !important;
+}
+.card {
+  min-height: 400px;
+  margin: 0.4rem 0.3rem !important;
+}
+.text-field {
+  width: 100%;
+}
+
+.grid-create .MuiGrid-container {
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  box-sizing: border-box !important;
+  align-content: stretch !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  justify-content: normal !important;
+}
+.submit-intent-card-header {
+  margin: 0rem 1rem;
+  padding: 1rem 0rem 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

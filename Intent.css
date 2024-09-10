@@ -1,0 +1,319 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+.MuiCardContent-root:last-child {
+  padding-bottom: 10px !important;
+}
+
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 2 !important;
+  letter-spacing: 0.009em;
+}
+.grid-layout {
+  display: flex;
+}
+.Typography-Header {
+  color: #035c67;
+}
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 10px 0px 10px 0px !important;
+}
+.MuiCardContent-root {
+  padding: 8px !important;
+}
+
+.ag-theme.alpine {
+  height: '500px';
+  width: '100%';
+}
+.card-new {
+  background-color: '#fff';
+  padding: '10px';
+  margin-bottom: '20px';
+}
+.MuiGrid-grid-xs-2 {
+  flex-grow: 0;
+  max-width: 13.9999999% !important;
+  flex-basis: 13.666667% !important;
+}
+.cardcontent-new {
+  display: 'flex' !important;
+  justify-content: 'space-between' !important;
+}
+.div-h2 {
+  display: flex !important;
+}
+.h2-tag {
+  margin: 0;
+  color: '#1963E1';
+}
+.button-newIntent {
+  margin-right: 'auto';
+  margin-left: '20px';
+  color: '#035C67';
+  border-radius: 25;
+}
+.buttonExport {
+  color: '#035C67';
+}
+.card-style {
+  background-color: '#fff';
+  padding: '20px';
+}
+
+.div-Buttons {
+  display: 'flex';
+  justify-content: 'flex-end';
+}
+.default-view {
+  text-transform: 'none';
+  color: '#035C67';
+}
+/* button:hover {
+  background-color: #0056b3;
+} */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  margin: 16px 0;
+}
+
+.case-id {
+  color: #1e88e5 !important;
+}
+
+.submitted-button {
+  background-color: #0e7e5a !important;
+  color: white !important;
+}
+
+.submitted-button:hover {
+  background-color: #388e3c !important;
+}
+
+.in-progress-button {
+  background-color: #ffa000 !important;
+  /* color: white !important; */
+}
+.new-button {
+  background-color: cyan !important;
+}
+.in-progress-button:hover {
+  background-color: #f57c00 !important;
+}
+.pagination-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 16px 0;
+}
+
+.pagination .MuiPagination-ul {
+  justify-content: center !important;
+}
+
+.pagination .MuiPaginationItem-root {
+  color: #3f51b5;
+}
+
+.pagination .MuiPaginationItem-root.Mui-selected {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.pagination .MuiPaginationItem-root:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+.request-card {
+  min-height: 80%;
+  width: 90%;
+  margin: 2rem;
+  padding: 2rem;
+}
+.header-display {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+.header-display p {
+  margin: 0;
+}
+.clear {
+  color: #035c67;
+  display: block;
+}
+.data-display {
+  display: flex;
+  flex-direction: column;
+}
+.status-display {
+  margin: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0px 4px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+}
+.status-display p {
+  margin: 0;
+}
+.id-display {
+  color: #035c67;
+  margin: 0;
+}
+.grid-view {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.table-view {
+  height: 500px;
+  width: 100%;
+}
+.button-group {
+  text-transform: 'none' !important;
+  font-size: '0.875rem' !important;
+  color: '#035C67' !important;
+  border: 1px solid lightgray !important;
+  border-radius: 3rem !important;
+  padding: 0 1rem !important;
+  margin-right: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  -webkit-border-radius: 3rem !important;
+  -moz-border-radius: 3rem !important;
+  -ms-border-radius: 3rem !important;
+  -o-border-radius: 3rem !important;
+}
+.button-group:hover {
+  background-color: #e0f7fa;
+}
+.buttons-div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0rem;
+}
+.button-group .MuiSvgIcon-root {
+  font-size: 0.875rem !important;
+}
+
+.MuiToggleButtonGroup-root {
+  padding: 6px 8px !important;
+}
+.ag-cell .case-status {
+  line-height: 0;
+  border-radius: 4px;
+  padding: 4px 4px;
+  display: inline-flex;
+  align-items: center;
+}
+.process-flow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.process-flow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.process-step {
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.process-step.active {
+  border: 2px solid #000;
+}
+
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 20px;
+  height: 2px;
+  background-color: #d3d3d3;
+  transform: translateY(-50%);
+}
+
+.process-content {
+  background-color: #f9f9f9;
+  border: 1px solid #d3d3d3;
+  padding: 20px;
+  width: 100%;
+  border-radius: 4px;
+}
+.card-display {
+  margin: 0.5rem 0;
+}
+.display {
+  display: flex;
+  gap: 6rem;
+}
+.card-display p {
+  margin: 0;
+}
+.MuiTypography-body1 {
+  font-size: 0.875rem !important;
+}
+.data-display .text-field {
+  font-size: 0.875rem !important;
+}
+.data-display .MuiOutlinedInput-inputMarginDense {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.clear {
+  color: #035c67;
+  display: block;
+  font-size: 0.875rem !important;
+}
+.intent-requests-card {
+  background-color: #fff;
+  padding: 20px;
+}
+.create-intent-button {
+  margin-right: auto !important;
+  margin-left: 20px !important;
+  text-transform: none !important;
+  background-color: #035c67 !important;
+  color: white !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+.intent-request-header {
+  margin: 0;
+  color: #035c67;
+}
+.reasearch-filters {
+  color: #035c67 !important;
+  margin: 0 !important;
+}
+
+.read {
+  background-color: #f6f5f3 !important;
+}
