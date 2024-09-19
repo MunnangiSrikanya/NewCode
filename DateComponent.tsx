@@ -1,46 +1,45 @@
-/* eslint-disable */
 import React from 'react';
 import { makeStyles, TextField } from '@material-ui/core';
 
-// Define types for the props
+// Define types for props
 interface DateComponentProps {
   label: string;
+  handleDateChange:(event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-// Create styles using makeStyles
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   textField: {
     width: '100%',
-    marginTop: '8px'
+    marginTop: '8px',
   },
   redAsterisk: {
-    color: 'red'
-  }
+    color: 'red',
+  },
 }));
 
-// Define the functional component with typed props
-const DateComponent: React.FC<DateComponentProps> = ({ label }) => {
+// Functional component with TypeScript
+const DateComponent: React.FC<DateComponentProps> = ({ label,handleDateChange }) => {
   const classes = useStyles();
-
   return (
     <div className={classes.container}>
       <label>{label}</label>
+
       <TextField
-        id='date'
-        variant='outlined'
-        // label={label}
-        type='date'
-        size='small'
+        id="date"
+        variant="outlined"
+        type="date"
+        size="small"
+        onChange={handleDateChange}
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
           classes: {
-            asterisk: classes.redAsterisk
-          }
+            asterisk: classes.redAsterisk,
+          },
         }}
       />
     </div>
