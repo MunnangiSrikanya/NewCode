@@ -1,43 +1,78 @@
-import React from 'react';
-import { Button, Checkbox, FormControlLabel, Grid, TextField } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Button, Checkbox, Divider, FormControlLabel, Grid, TextField } from '@material-ui/core';
 import DateComponent from './DateComponent';
 import TableComponent from './TableComponent';
+import FileUploadComponent from './FileUploadComponent';
+import UploadedFiles from './UploadedFiles';
 
-// Define types for columns used in TableComponent
+// Define the type for the column objects
 interface Column {
+  headerName:string;
   field: string;
 }
+interface options {
+  [key: string]: string;
+  carrierName: string;
+  code: string;
+  lineofBusiness:string
+}
+// Define the columns with the type
+const columns: Column[] = [{ headerName:'Carrier Name',field: 'carrierName' }, { headerName:'Line of Business',field: 'lineofBusiness' }];
 
 const AdditionalMedicare: React.FC = () => {
-  // Define the columns for the tables
-  const columns: Column[] = [{ field: 'Carrier Name' }, { field: 'Line of Business' }, { field: 'Delete' }];
-
-  const columnsTwo: Column[] = [{ field: 'File Name' }, { field: 'Effective Date' }, { field: 'Open Enrollment Date' }, { field: 'Delete' }];
-
+  const [effectiveDate, setEffectiveDate] = useState<string>('');
+  const [openEnrollmentDate, setOpenEnrollmentDate] = useState<string>('');
+  const [applyToAll, setApplyToAll] = useState<boolean>(false);
+  const [applyToAllCarriers, setApplyToAllCarriers] = useState<boolean>(false);
+  const [rowData,setRowData]=useState<options[]>([]);([])
+  const carrierNames: options[] = [
+    { carrierName: 'Centene EGWP', code: '2FKA',lineofBusiness:'Medicare Employer Group EGWP' },
+    { carrierName: 'Highest Acct MA Only', code: '3820',lineofBusiness:'Medicare Employer Group EGWP' },
+    { carrierName: 'BCBSWNY MAPD EGWP', code: '6332',lineofBusiness:'Medicare MA-PD and PDP' },
+    { carrierName: 'BSNENY MAPD EGWP', code: '6334',lineofBusiness:'Medicare Part-D' },
+    { carrierName: 'BS NTHEASTERN NY ASO EGWP', code: '7496' ,lineofBusiness:'Medicare Part-D'},
+  ];
+  const handleApplyToAllChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setApplyToAll(event.target.checked);
+  };
+  const handleDateChange = (field: 'EffectiveDate' | 'OpenEnrollmentDate') => (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    if (field === 'EffectiveDate') {
+      setEffectiveDate(value);
+    } else {
+      setOpenEnrollmentDate(value);
+    }
+  };
+  const handleApplyToAllCarriers = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setApplyToAllCarriers(event.target.checked);
+  };
+  useEffect(()=>{
+    if(applyToAllCarriers){
+      setRowData(carrierNames);
+    }else{
+      setRowData([])
+    }
+  },[applyToAllCarriers])
+  const handleDelete = (index: number) => {
+    setRowData((prevData) => prevData.filter((_, i) => i !== index));
+  };
   return (
     <div>
-      <div>
-        <FormControlLabel control={<Checkbox />} label='Apply to all Carriers' />
-        <TableComponent columns={columns} />
+      <div >
+        <TableComponent columns={columns} rowData={rowData} selectedFileType='' handleDelete={handleDelete}/>
+        <FormControlLabel control={<Checkbox checked={applyToAllCarriers} onChange={handleApplyToAllCarriers}/>} label="Apply to all Carriers" style={{padding:'12px'}} />
       </div>
       <Grid container spacing={3} style={{ marginBottom: '1rem', marginTop: '1rem' }}>
-        <Grid item xs={4}>
-          <DateComponent label='Effective Date' />
+        <Grid item xs={6}>
+          <DateComponent label="Effective Date" handleDateChange={handleDateChange('EffectiveDate')}/>
         </Grid>
-        <Grid item xs={4}>
-          <DateComponent label='Open Enrollment Date' />
-        </Grid>
-        <Grid item xs={4}>
-          <FormControlLabel control={<Checkbox />} label='Apply Date to all Carriers' />
-        </Grid>
+        <Grid item xs={6}>
+          <DateComponent label="Open Enrollment Date" handleDateChange={handleDateChange('OpenEnrollmentDate')}/>
+        </Grid>  
       </Grid>
-      <div style={{ marginBottom: '1rem' }}>
-        <Button variant='contained' size='small' className='button' style={{ marginRight: '1rem' }}>
-          Upload
-        </Button>
-        <TextField label='Please attach files in excel format' variant='filled' disabled style={{ width: '25%' }} size='small' />
-      </div>
-      <TableComponent columns={columnsTwo} />
+      <FormControlLabel control={<Checkbox checked={applyToAll} onChange={handleApplyToAllChange}/>} label="Apply Date to all files"  style={{padding:'12px'}}/>
+      <UploadedFiles applyToAll={applyToAll} effectiveDate={effectiveDate} openEnrollmentDate={openEnrollmentDate}/>
+     
     </div>
   );
 };
